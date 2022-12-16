@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>Nhap vao so met</label>
+<input id="m" type="text">
+<button onclick="change()">change</button>
+<br>
+<label>Nhap vao so feet</label>
+<input id="f" type="text">
+<button onclick="doi()">change</button>
+<h3 id="result">ket qua</h3>
+
+<script>
+  function change(){
+    let met =+document.getElementById('m').value
+    let feet = met/0.305
+    document.getElementById('result').innerText = feet
+  }
+function doi(){
+      let feet = +document.getElementById('f').value
+    let met = feet/3.27
+    document.getElementById('result').innerText = met
+}
+</script>
+</body>
+</html>

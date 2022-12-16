@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = prompt('nhap chuoi can kiem tra')
+    let array = a.split('')
+    let newArray = a.split('').reverse()
+    console.log(newArray)
+    let check = true
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] !== newArray[i]){
+            alert(' khong phai Palindrome')
+            check = false
+            break;
+        }
+    } if (check){
+        alert('chuoi Palindrome')
+    }
+</script>
+</body>
+</html>

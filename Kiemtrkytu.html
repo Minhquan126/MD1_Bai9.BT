@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let a = prompt('nhap mang')
+  let x = prompt('nhap ky tu')
+  let array = a.split('')
+  console.log(array)
+  let check = true
+  for (let i = 0; i < array.length; i++) {
+     if (array[i].search(x)==-1)  {
+         check = false
+         document.write(-1)
+     }
+  } if (check){
+      document.write(array[i] + ' ' + i)
+  }
+
+</script>
+</body>
+</html>

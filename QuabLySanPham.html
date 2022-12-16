@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 300px;
+            height: 70px;
+            background-color: #c3cfdb;
+        }
+        table{
+            width: 500px;
+
+        }
+        button{
+            background-color: chartreuse;
+            color: white;
+            border-radius: 20%;
+        }
+    </style>
+</head>
+<body>
+<h2>Add New Product</h2>
+<div>
+
+    <input style="text-align: center" id="addname" placeholder="add new product..." type="text">
+    <button onclick="addNameProduct()">add</button>
+</div>
+
+<table>
+  <tr>
+    <td colspan="2"><b>Product Name</b></td>
+    <td></td>
+  </tr>
+<tbody id="listtable">
+
+</tbody>
+</table>
+<script>
+  let listProductName = ['Vsmart','Iphone','Sony Eperia','Samsung Galaxy']
+  function tableNameProduct(){
+    let name = ''
+    for (let i = 0; i < listProductName.length; i++) {
+      name += `
+      <tr>
+      <td> ${listProductName[i]} </td>
+      <td> <button onclick="editNameProduct(${i})">edit</button> </td>
+      <td> <button onclick="deleteNameProduct(${i})">delete</button> </td>
+      </tr>
+      `
+    } document.getElementById('listtable').innerHTML = name
+    console.log(name)
+  }
+  tableNameProduct();
+  function addNameProduct(){
+    let newName = document.getElementById('addname').value
+    listProductName.push(newName)
+    tableNameProduct();
+  }
+  function editNameProduct(index){
+    let editName = prompt('nhap de sua')
+    if (editName.trim == ''){
+        alert('ban can nhap ten san pham')
+    } else {
+        listProductName[index] = editName
+
+    }tableNameProduct();
+  }
+  function deleteNameProduct(index) {
+listProductName.splice(index,1)
+      tableNameProduct()
+  }
+</script>
+</body>
+</html>
